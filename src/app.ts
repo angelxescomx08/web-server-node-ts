@@ -5,10 +5,15 @@ const app = express();
 const port = 3000;
 const baseURL = path.join(__dirname, "../public");
 
+app.set("view engine", "hbs");
+
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-  res.send("Hello World");
+  res.render("home", {
+    nombre: "Ángel Hernández",
+    titulo: "Curso Node",
+  });
 });
 
 app.get("*", (req, res) => {
