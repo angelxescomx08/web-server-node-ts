@@ -1,8 +1,12 @@
-import http from "http";
+import express from "express";
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.write("Hola mundo");
-  res.end();
+const port = 3000;
+
+app.get("/", function (req, res) {
+  res.send("Hello World");
 });
 
-server.listen(3000);
+app.listen(port, () => {
+  console.log(`Aplicación corriendo en el puerto: ${port}`);
+});
