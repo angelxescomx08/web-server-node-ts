@@ -12,10 +12,9 @@ hbs.registerPartials(__dirname + "/views/partials");
 
 app.use(express.static("public"));
 
-app.get("/", function (req, res) {
-  res.render("home", {
-    nombre: "Ángel Hernández",
-    titulo: "Curso Node",
+app.get("/api", function (req, res) {
+  res.json({
+    msg: "Hola mundo",
   });
 });
 
